@@ -1,0 +1,28 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://social-network-discovery-service:8761/eureka
+
+server:
+  port: 8070
+spring:
+  application:
+    name: interactions
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres-sql:5432/social_networks
+    username: postgres
+    password: 1111
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
